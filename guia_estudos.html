@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .grupo {
+            border: 1px solid rgb(0, 0, 0);
+            background-color: rgb(233, 245, 252);
+            border-radius: 20px;
+            margin: 20px;
+            margin-top: 50px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        .grupo>div {
+            color: rgb(19, 96, 134);
+            padding-left: 20px;
+            padding-top: 5px;
+            font-size: 15px;
+            font-weight: normal;
+        }
+        
+        .grupo>div>a {
+            color: rgb(5, 5, 199);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .grupo>h2 {
+            text-align: center;
+            font-size: 18px;
+            color: rgb(121, 198, 236);
+            background-color: rgb(6, 32, 45);
+            height: 40px;
+            margin: 0;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        
+        .text_pop span {
+            animation: in 1s forwards;
+        }
+        
+        .text_pop span:hover {
+            animation: out 1s forwards;
+        }
+        
+        .comando {
+            font-family: 'Courier New', Courier, monospace;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        @keyframes out {
+            0% {
+                text-shadow: -9.7px 9.7px 0px #EF476F,
+            }
+            50% {
+                text-shadow: -9.7px 9.7px 0px #EF476F, -19.3px 19.3px 0px #a23450,
+            }
+            100% {
+                text-shadow: -9.7px 9.7px 0px #EF476F, -19.3px 19.3px 0px #a23450, -29px 29px 0px #4d1a26;
+                transform: translate(29px, -29px);
+            }
+        }
+        
+        @keyframes in {
+            0% {
+                text-shadow: -9.7px 9.7px 0px #EF476F, -19.3px 19.3px 0px #a23450, -29px 29px 0px #4d1a26;
+                transform: translate(29px, -29px);
+            }
+            33% {
+                text-shadow: -9.7px 9.7px 0px #EF476F, -19.3px 19.3px 0px #a23450,
+            }
+            66% {
+                text-shadow: -9.7px 9.7px 0px #EF476F,
+            }
+            100% {
+                text-shadow: -9.7px 9.7px 0px #EF476F,
+            }
+        }
+        /* Fundo*/
+        
+        .shapedividers_com-2714 {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .shapedividers_com-2714::before {
+            content: '';
+            font-family: 'shape divider from ShapeDividers.com';
+            position: absolute;
+            bottom: -1px;
+            left: -1px;
+            right: -1px;
+            top: -1px;
+            z-index: 3;
+            pointer-events: none;
+            background-repeat: no-repeat;
+            background-size: 100% 90px;
+            background-position: 50% 0%;
+            background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.28 2.17" preserveAspectRatio="none"><path d="M0 .5c3.07.55 9.27-.42 16.14 0 6.88.4 13.75.57 19.14-.11V0H0z" fill="%23fbd8c2"/><path d="M0 1c3.17.8 7.29-.38 10.04-.55 2.75-.17 9.25 1.47 12.67 1.3 3.43-.17 4.65-.84 7.05-.87 2.4-.02 5.52.88 5.52.88V0H0z" opacity=".5" fill="%23fbd8c2"/><path d="M0 1.85c2.56-.83 7.68-.3 11.79-.42 4.1-.12 6.86-.61 9.58-.28 2.73.33 5.61 1.17 8.61 1 3-.19 4.73-.82 5.3-.84V.1H0z" opacity=".5" fill="%23fbd8c2"/></svg>');
+        }
+        
+        @media (min-width:768px) {
+            .shapedividers_com-2714::before {
+                transform: scaleX(4);
+                transform-origin: 100% 0;
+                animation: 10s infinite alternate shape-anim-2714-mobile linear;
+                background-size: 100% 90px;
+                background-position: 50% 0%;
+            }
+        }
+        
+        @media (min-width:1025px) {
+            .shapedividers_com-2714::before {
+                bottom: -0.1vw;
+                left: -0.1vw;
+                right: -0.1vw;
+                top: -0.1vw;
+                transform: scaleX(4);
+                transform-origin: 100% 0;
+                animation: 12s infinite alternate shape-anim-2714-mobile linear;
+                background-size: 100% 400px;
+                background-position: 50% 0%;
+            }
+        }
+        
+        @media (min-width:2100px) {
+            .shapedividers_com-2714::before {
+                background-size: 169% calc(2vw + 400px);
+            }
+        }
+    </style>
+
+    <title>Guia de Estudos</title>
+</head>
+
+<body>
+
+
+    <h1 class="shapedividers_com-1891"> GUIA EXTENSO DE PROGRAÇÃO:</h1>
+
+
+
+    <div>ME SEGUE NO GITHUB: https://github.com/arthurspk/</div>
+    <div>ENTRA NO SERVIDOR DO DISCORD PARA MAIS CONTEÚDO: https://discord.gg/NbMQUPjHz7</div>
+    <div>CONECTA LÁ NO LINKEDIN: https://www.linkedin.com/in/arthurspk/</div>
+    <div></div>
+
+    <div class="grupo">
+        <h2 class="text_pop">
+            <span>S</span>ITES PARA ESTUDAR PROGRAMAÇÃO
+        </h2>
+        <div>ROCKETSEAT: <a target="_blank" href="https://www.rocketseat.com.br/">https://www.rocketseat.com.br/</a></div>
+        <div>DIO: <a target="_blank" href="https://digitalinnovation.one/">https://digitalinnovation.one/</a></div>
+        <div>Curso em video: <a target="_blank" href="https://www.youtube.com/c/CursoemV%C3%ADdeo">https://www.youtube.com/c/CursoemVídeo</a></div>
+        <div>Khan Academy: <a target="_blank" href="https://pt.khanacademy.org/">tps://pt.khanacademy.org/</a></div>
+        <div>W3Schools: <a target="_blank" href="https://www.w3schools.com/">tps://www.w3schools.com/</a></div>
+        <div>Udemy: <a target="_blank" href="https://www.udemy.com/">https://www.udemy.com/</a></div>
+        <div>HackerRank: <a target="_blank" href="https://www.hackerrank.com/">https://www.hackerrank.com/</a></div>
+        <div>Hackereath: <a target="_blank" href="https://www.hackerearth.com/">https://www.hackerearth.com/</a></div>
+        <div>Coderbyte: <a target="_blank" href="https://coderbyte.com/">https://coderbyte.com/</a></div>
+        <div>Coderchef: <a target="_blank" href="https://www.codechef.com/">tps://www.codechef.com/</a></div>
+        <div>W3resource: <a target="_blank" href="https://www.w3resource.com/">tps://www.w3resource.com/</a></div>
+        <div>Cousera: <a target="_blank" href="https://pt.coursera.org/">tps://pt.coursera.org/</a></div>
+        <div>Codepen: <a target="_blank" href="https://codepen.io/">https://codepen.io/</a></div>
+        <div>Codementor: <a target="_blank" href="https://www.codementor.io/">tps://www.codementor.io/</a></div>
+        <div>FreeCodeCamp: <a target="_blank" href="https://www.freecodecamp.org/">tps://www.freecodecamp.org/</a></div>
+        <div>GeeksForGeeks: <a target="_blank" href="https://www.geeksforgeeks.org/">tps://www.geeksforgeeks.org/</a></div>
+        <div>Udacity: <a target="_blank" href="https://www.udacity.com/">tps://www.udacity.com/</a></div>
+        <div>Sololearn: <a target="_blank" href="https://www.sololearn.com/">tps://www.sololearn.com/</a></div>
+        <div>EdX: <a target="_blank" href="https://www.edx.org/">tps://www.edx.org/</a></div>
+        <div>Treehouse: <a target="_blank" href="https://teamtreehouse.com/">https://teamtreehouse.com/</a></div>
+        <div>Tutorialspoint: <a target="_blank" href="https://www.tutorialspoint.com/">tps://www.tutorialspoint.com/</a></div>
+    </div>
+
+
+    <div class="grupo">
+        <h2>SITES PARA DESENVOLVEDOR FRONT-END</h2>
+        <div><a target="_blank" href="https://textpop3d.web.app/">https://textpop3d.web.app/ </a> (Cria efeitos de texto 3D)</div>
+        <div><a target="_blank" href="https://shapedividers.com">https://shapedividers.com</a> (Gera divisores de formas verticais, responsivos, e animados facilmente com este gerador de divisores de formas SVG)</div>
+        <div><a target="_blank" href="https://couleur.io">https://couleur.io</a> (Um ferramenta de cores simples para ajudá-lo a encontrar uma boa paleta de cores para seu projeto da web)</div>
+        <div><a target="_blank" href="https://baseline.is/tools/css-photo-filters/">https://baseline.is/tools/css-photo-filters/</a> (36 Belos filtros de fotos, com edição simples e CSS para copiar)</div>
+        <div><a target="_blank" href="https://uideck.com">https://uideck.com</a> (Modelo de página de destino HTML gratuitos e premium, temas de bootstrap, modelos de React, modelos de Tailwind, modelos de site HTML, e kits de interface de usúario)</div>
+        <div><a target="_blank" href="https://naevner.com">https://naevner.com</a> (Descrição de cores em linguagem natural, gerador de códigos em cores hexadecimais)</div>
+    </div>
+
+
+
+
+    <div class="grupo">
+        <h2>SITES PARA APRENDER A PROGRAMAR JOGANDO</h2>
+        <div>Code Combat: <a target="_blank" href="https://br.codecombat.com/">hps://br.codecombat.com/</a></div>
+        <div>CheckiO: <a target="_blank" href="https://checkio.org/">https://checkio.org/</a></div>
+        <div>Codewars: <a target="_blank" href="https://www.codewars.com/">hps://www.codewars.com/</a></div>
+        <div>Schemaverse: <a target="_blank" href="https://schemaverse.com/">https://schemaverse.com/</a></div>
+        <div>Code Monkey: <a target="_blank" href="https://www.codemonkey.com/">hps://www.codemonkey.com/</a></div>
+        <div>CodinGame: <a target="_blank" href="https://www.codingame.com/start">hps://www.codingame.com/start</a></div>
+    </div>
+
+    <div class="grupo">
+        <h2>TEMPLATES HTML GRATUITOS:</h2 class="grupo">
+        <div><a target="_blank" href="https://bootstrapmade.com/">https://bootstrapmade.com/</a></div>
+        <div><a target="_blank" href="https://w3layouts.com">https://w3layouts.com</a></div>
+        <div><a target="_blank" href="https://onepagelove.com">https://onepagelove.com</a></div>
+    </div>
+
+
+    <div class="grupo">
+        <h2>SITES PARA APRENDER OU TREINAR CSS</h2>
+        <div><a target="_blank" href="https://cssgridgarden.com">https://cssgridgarden.com</a></div>
+        <div><a target="_blank" href="https://flukeout.github.io/">https://flukeout.github.io/</a></div>
+        <div><a target="_blank" href="https://flexboxfroggy.com">https://flexboxfroggy.com</a></div>
+        <div><a target="_blank" href="http://www.flexboxdefense.com/">http://www.flexboxdefense.com/</a></div>
+        <div><a target="_blank" href="https://100dayscss.com">https://100dayscss.com</a></div>
+        <div><a target="_blank" href="https://cssbattle.dev/">https://cssbattle.dev/</a></div>
+        <div><a target="_blank" href="https://css-tricks.com/guides/">https://css-tricks.com/guides/</a></div>
+        <div><a target="_blank" href="https://csshell.dev">https://csshell.dev/ (Coleção de erros comuns de CSS e como corrigi-los)</a></div>
+    </div>
+
+    <div class="grupo">
+        <h2>SITE DE ICONES</h2>
+        <div>0. DrawKit: <a target="_blank" href="https://www.drawkit.io/free-icons/">https://www.drawkit.io/free-icons/</a></div>
+        <div>1. Eva Icons: <a target="_blank" href="https://akveo.github.io/eva-icons/#/">https://akveo.github.io/eva-icons/#/</a></div>
+        <div>2. Feather: <a target="_blank" href="https://feathericons.com/">https://feathericons.com/</a></div>
+        <div>3. Font Awesome: <a target="_blank" href="https://fontawesome.com/">https://fontawesome.com/</a></div>
+        <div>4. Heroicons: <a target="_blank" href="https://heroicons.dev/">https://heroicons.dev/</a></div>
+        <div>5. Iconsvg: <a target="_blank" href="https://iconsvg.xyz/">https://iconsvg.xyz/</a></div>
+        <div>6. Icons8: <a target="_blank" href="https://icons8.com/line-awesome/">https://icons8.com/line-awesome/</a></div>
+        <div>7. Shape: <a target="_blank" href="https://shape.so/">https://shape.so/</a></div>
+        <div>8. Flaticon: <a target="_blank" href="https://www.flaticon.com/br/">https://www.flaticon.com/br/</a></div>
+        <div>9. Bootstrap icons: <a target="_blank" href="https://icons.getbootstrap.com/">https://icons.getbootstrap.com/</a></div>
+    </div>
+
+
+    <div>GERADORES DE CSS:</div>
+    <div></div>
+    <div>https://neumorphism.io</div>
+    <div>https://9elements.github.io/fancy-border-radius</div>
+    <div>https://waitanimate.wstone.io</div>
+    <div>https://www.bestcssbuttongenerator.com</div>
+    <div>https://html-css-js.com/css/generator/</div>
+    <div></div>
+    <div>SITE PARA BUSCAR VAGAS REMOTAS:</div>
+    <div></div>
+    <div>https://remoteok.io</div>
+    <div>https://hired.com</div>
+    <div>https://bergamot.io</div>
+    <div>https://justremote.co</div>
+    <div>https://workingnomads.co</div>
+    <div></div>
+    <div>ÓTIMOS SITES PARA DESENVOLVEDORES:</div>
+    <div></div>
+    <div>https://internxt.com/</div>
+    <div>https://motion.dev/</div>
+    <div>https://hokusai.app/</div>
+    <div>https://url-shortene-r.herokuapp.com/</div>
+    <div>https://hiddentools.dev</div>
+    <div>https://devhints.io</div>
+    <div>https://caiuse.com</div>
+    <div>https://bundlephobia.com</div>
+    <div></div>
+    <div>FERRAMENTAS PARA DEV WEB:</div>
+    <div></div>
+    <div>https://www.minimamente.com/project/magic/</div>
+    <div>https://jonsuh.com/hamburgers/</div>
+    <div>https://ianlunn.github.io/Hover/</div>
+    <div></div>
+    <div>MELHORES DISTROS LINUX PARA PROGRAMADORES:</div>
+    <div></div>
+    <div>Pop!_Os</div>
+    <div>Arch Linux</div>
+    <div>Debian</div>
+    <div>Ubuntu</div>
+    <div>Fedora</div>
+    <div>Linux Mint</div>
+    <div></div>
+    <div>BIBLIOTECAS JAVASCRIPT:</div>
+    <div></div>
+    <div>ApexCharts: https://apexcharts.com/</div>
+    <div>Particles.js: https://vincentgarreau.com/particles.js/</div>
+    <div>ScrollMagic: https://scrollmagic.io/</div>
+    <div></div>
+    <div>7 FERRAMENTAS PARA QUE TODO DEV PRECISA CONHECER:</div>
+    <div></div>
+    <div>Figma: ferramenta para design de interfaces.</div>
+    <div>Insomnia: é um API Client, uma ferramenta para fazer testes de API's.</div>
+    <div>Rive: ferramenta colaborativa de animação para apps, jogos e sites.</div>
+    <div>CloudCraft: plataforma com foco em criar desenhos de arquiteturas AWS.</div>
+    <div>BundlePhobia: site para descobrir o custo de adicionar um npm package no seu pacote.</div>
+    <div>Font Flipper: Tinder das fontes, basta apertar X caso não goste e ❤ se você gostar, adicione aos favoritos já com o nome</div>
+    <div>da fonte e faça o download pelo Google fonts.</div>
+    <div>VisBug: é uma extensão de Chrome, criada pelo google, ferramenta de design que te permite mudar o layout das páginas da</div>
+    <div>web desde o estilo de fontes até a posição dos elementos.</div>
+    <div></div>
+    <div>SITES PARA PRATICAR UI/UX:</div>
+    <div></div>
+    <div>https://sharpen.design/</div>
+    <div>https://www.dailyui.co/</div>
+    <div>https://uxtools.co/challenges</div>
+    <div>https://drawerrr.com/challenge</div>
+    <div>https://www.uplabs.com/challenges</div>
+    <div></div>
+    <div>FERRAMENTAS PARA HOSPEDAS SEU SITE DE GRAÇA:</div>
+    <div></div>
+    <div>https://www.netlify.com/</div>
+    <div>https://pages.github.com/</div>
+    <div>https://www.heroku.com/</div>
+    <div>https://www.awardspace.com/</div>
+    <div>https://byet.host/</div>
+    <div>https://vercel.com/</div>
+    <div>https://infinityfree.net/</div>
+    <div></div>
+    <div>SITES PARA INSPIRAR O SEU DESENVOLVIMENTO:</div>
+    <div></div>
+    <div>https://www.producthunt.com/</div>
+    <div>https://namify.tech/?ref=producthunt</div>
+    <div>https://dribbble.com/</div>
+    <div>https://br.pinterest.com/</div>
+    <div>https://www.deviantart.com/</div>
+    <div>https://www.lapa.ninja/</div>
+    <div>https://hyperpixel.io/</div>
+    <div>https://onepagelove.com/</div>
+    <div>https://onepagelove.com/boring-avatars</div>
+    <div>https://land-book.com/</div>
+    <div>https://www.awwwards.com/</div>
+    <div>https://www.bestfolios.com/home</div>
+    <div>https://sitesee.co/</div>
+    <div>https://httpster.net/2021/jun/</div>
+    <div>https://builders-club.com/</div>
+    <div>https://cssnectar.com/</div>
+    <div>https://collectui.com</div>
+    <div>https://bestwebsite.gallery</div>
+    <div></div>
+    <div>SITES PARA BAIXAR E ENCONTRAR FONTES:</div>
+    <div></div>
+    <div>0. Adobe Fonts: https://fonts.adobe.com/</div>
+    <div>1. Google fonts: https://fonts.google.com/</div>
+    <div>2. Dafont: https://www.dafont.com/pt/</div>
+    <div>3. NetFontes: https://www.netfontes.com.br/</div>
+    <div>4. Urbanfonts: https://www.urbanfonts.com/pt/</div>
+    <div>5. Befonts: https://befonts.com/</div>
+    <div>6. Fonts space: https://www.fontspace.com/</div>
+    <div>7. 1001 fonts: https://www.1001fonts.com/</div>
+    <div>8. Abstract fonts: https://www.abstractfonts.com/</div>
+    <div>9. Fontget: https://www.fontget.com/</div>
+    <div></div>
+    <div>SITE DE DE PALETAS DE CORES:</div>
+    <div></div>
+    <div>0. Paletton: https://paletton.com/</div>
+    <div>1. Adobe Color: https://color.adobe.com/pt/create/color-wheel/</div>
+    <div>2.Color Hunt: https://colorhunt.co/</div>
+    <div>3. Happy Hues: https://www.happyhues.co/</div>
+    <div>4. Coolors: https://coolors.co/</div>
+    <div>5. Gradient Hunt: https://gradienthunt.com/</div>
+    <div>6. Flat UI Colors: https://flatuicolors.com/</div>
+    <div>7. Grabient: https://www.grabient.com/</div>
+    <div>8. Pigment: https://pigment.shapefactory.co/</div>
+    <div>9. WebGradient: https://webgradients.com/</div>
+    <div></div>
+    <div>LISTA DE ILUSTRAÇÕES:</div>
+    <div></div>
+    <div>0. DrawKit: https://www.drawkit.io/</div>
+    <div>1. Humaaans: https://www.humaaans.com/</div>
+    <div>2. Open Doodle: https://www.opendoodles.com/</div>
+    <div>3. Storyset: https://storyset.com/</div>
+    <div>4. unDraw: https://undraw.co/</div>
+    <div>5. 404 Illustrations (by kapwing): https://www.kapwing.com/404-illustrations/</div>
+    <div>6. 404 Illustrations: https://error404.fun/</div>
+    <div>7. Ouch: https://icons8.com.br/illustrations/</div>
+    <div>8. Delesing: https://delesign.com/free-designs/graphics/</div>
+    <div>9. Pixeltru: https://www.pixeltrue.com/free-illustrations/</div>
+    <div></div>
+
+    <div>CANAIS DO YOUTUBE COM CONTEÚDO GRATUITO:</div>
+    <div></div>
+    <div>https://youtube.com/c/baltaio</div>
+    <div>https://youtube.com/c/CodAffection</div>
+    <div>https://youtube.com/c/codedamn</div>
+    <div>https://youtube.com/c/EspecializatiBr</div>
+    <div>https://youtube.com/channel/UCoqYHkQy8q5nEMv1gkcZgSw</div>
+    <div>https://youtube.com/c/MichelliBrito</div>
+    <div>https://youtube.com/c/TheNetNinja</div>
+    <div>https://youtube.com/c/ThiengoCalopsita</div>
+    <div>https://youtube.com/c/TraversyMedia</div>
+    <div>https://youtube.com/c/MangoDeveloper</div>
+    <div>https://youtube.com/c/RocketSeat</div>
+    <div>https://youtube.com/c/RodrigoBranas</div>
+    <div>https://youtube.com/c/Academind</div>
+    <div>https://youtube.com/user/saimon1924</div>
+    <div>https://youtube.com/c/AngularFirebase</div>
+    <div>https://youtube.com/c/Freecodecamp</div>
+    <div>https://youtube.com/c/MTechViral</div>
+    <div>https://youtube.com/c/IgorRemas</div>
+    <div>https://youtube.com/c/SantosEnoque</div>
+    <div>https://youtube.com/channel/UCjBxAm226XZvgrkO-JyjJgQ</div>
+    <div>https://youtube.com/c/DesignCourse</div>
+    <div>https://youtube.com/c/Londonappbrewery</div>
+    <div>https://youtube.com/c/eddydn71</div>
+    <div>https://www.youtube.com/user/cursosemvideo</div>
+    <div>https://youtube.com/c/ThizerAplicativos</div>
+    <div>https://youtube.com/c/loianegroner</div>
+    <div>https://youtube.com/c/CanalDotNET</div>
+    <div>https://youtube.com/c/ProtocoloAlterado</div>
+    <div>https://youtube.com/c/DevSoutinho</div>
+    <div>https://youtube.com/c/FabioAkita1990</div>
+    <div>https://www.youtube.com/channel/UCwn-9qpyukBnuA3eB-3F0Sg</div>
+    <div>https://www.youtube.com/c/ProgramadorREAL</div>
+    <div>https://www.youtube.com/c/professorramos/</div>
+    <div>https://www.youtube.com/c/RoboticapraticaBr/</div>
+    <div>https://www.youtube.com/c/zero1ti/</div>
+    <div>https://www.youtube.com/user/RafaellaBallerini/</div>
+    <div>https://www.youtube.com/channel/UCB12jjYsYv-eipCvBDcMbXw</div>
+    <div>https://www.youtube.com/channel/UCjF0OccBT05WxsJb2zNkL4g</div>
+    <div>https://www.youtube.com/c/Descompila/</div>
+    <div>https://www.youtube.com/c/UnicornCoder/</div>
+    <div>https://www.youtube.com/c/KaSolutionOficial/</div>
+    <div>https://www.youtube.com/c/CanalTekZoom/</div>
+    <div>https://www.youtube.com/c/BoniekyLacerdaLeal</div>
+    <div>https://www.youtube.com/c/Programadorbr</div>
+    <div>https://www.youtube.com/c/ZUPIT/</div>
+    <div>https://www.youtube.com/c/BeerandCode/</div>
+    <div>https://www.youtube.com/c/AttekitaDev/</div>
+    <div>https://www.youtube.com/c/WebDevSimplified/</div>
+    <div>https://www.youtube.com/c/Alura/</div>
+    <div>https://www.youtube.com/c/EscolaFrontend/</div>
+    <div>https://www.youtube.com/c/Academind/</div>
+    <div>https://www.youtube.com/c/RodrigoBranas/</div>
+    <div></div>
+    <div>BLOGS E PODCASTS:</div>
+    <div></div>
+    <div>https://devnaestrada.com.br/</div>
+    <div>https://dicasdeprogramacao.com.br/</div>
+    <div>https://podprogramar.com.br/</div>
+    <div>https://hipsters.tech/</div>
+    <div>https://www.linuxtips.io/</div>
+    <div>https://www.etudonuve.com.br/i/</div>
+    <div>https://dev.to/</div>
+    <div>https://deploy.codenation.com.br/podcasts/home</div>
+    <div>https://playcode.com.br/</div>
+    <div>https://open.spotify.com/show/07cPNODgBHWh2JMkHbZxXG</div>
+    <div>https://blog.corujadeti.com.br/</div>
+    <div>https://cooperati.com.br/</div>
+    <div>https://www.zup.com.br/blog</div>
+    <div></div>
+    <div>WEB DEVELOPER ROADMAP:</div>
+    <div></div>
+    <div>https://github.com/kamranahmedse/developer-roadmap</div>
+    <div></div>
+    <div>EXTENSÕES PARA O SEU NAVEGADOR:</div>
+    <div></div>
+    <div>File Icons for GitHub and GitLab</div>
+    <div>GoFullPage</div>
+    <div>Web Developer</div>
+    <div>React Developer Tools</div>
+    <div>Window Resizer</div>
+    <div></div>
+    <div>RECOMENDAÇÃO DE LIVROS:</div>
+    <div></div>
+    <div>Clean Code - Código Limpo</div>
+    <div>Refactoring - Refatoração</div>
+    <div>Clean Archtecture - Arquitertura Limpa</div>
+    <div>O programador pragmático</div>
+    <div></div>
+    <div>APPS PARA PRATICAR PROGRAMAÇÃO:</div>
+    <div></div>
+    <div>SoloLearn</div>
+    <div>Pydriod3</div>
+    <div>Mimo</div>
+    <div>Dcoder</div>
+    <div>Codecademy</div>
+    <div></div>
+    <div>SITES PARA TREINAR PROJETOS FRONT-END (MONTAR PORTFOLIO):</div>
+    <div></div>
+    <div>https://www.frontendmentor.io/</div>
+    <div>https://codier.io/</div>
+    <div>https://codewell.cc/</div>
+    <div>https://devchallenge.com.br/</div>
+    <div>https://codepen.io/challenges</div>
+    <div></div>
+    <div>SITES PARA TREINAR PROJETOS BACK-END:</div>
+    <div></div>
+    <div>https://devchallenge.vercel.app/challenges?type=backend</div>
+    <div></div>
+    <div>SITES PARA TREINAR PROJETOS MOBILE:</div>
+    <div></div>
+    <div>https://devchallenge.vercel.app/challenges?type=mobile</div>
+    <div></div>
+    <div>IDEIAS PARA PROJETO:</div>
+    <div></div>
+    <div>https://github.com/florinpop17/app-ideas</div>
+    <div></div>
+    <div>CURSOS DE JAVA:</div>
+    <div></div>
+    <div>Java Tutorial for Beginners:</div>
+    <div>https://www.youtube.com/watch?v=eIrMbAQSU34</div>
+    <div></div>
+    <div>Maratona Java:</div>
+    <div>https://youtu.be/VKjFuX91G5Q</div>
+    <div></div>
+    <div>Learn Java 8 Full Course in 9 Hours:</div>
+    <div>https://www.youtube.com/watch?v=grEKMHGYyns</div>
+    <div></div>
+    <div>Java Programming:</div>
+    <div>https://www.youtube.com/playlist?list=PLBlnK6fEyqRjKA_NuK9mHmlk0dZzuP1P5</div>
+    <div></div>
+    <div>Frameworks de Java:</div>
+    <div>https://www.codigofonte.com.br/artigos/os-dez-melhores-frameworks-java-do-mercado</div>
+    <div></div>
+    <div>Java Full Course:</div>
+    <div>https://www.youtube.com/watch?v=xk4_1vDrzzo</div>
+    <div></div>
+    <div>Curso de Java</div>
+    <div>https://youtube.com/playlist?list=PLHz_AreHm4dkI2ZdjTwZA4mPMxWTfNSpR</div>
+    <div></div>
+    <div>Curso de Java</div>
+    <div>https://youtube.com/playlist?list=PLGxZ4Rq3BOBq0KXHsp5J3PxyFaBIXVs3r</div>
+    <div></div>
+    <div>Curso de Java</div>
+    <div></div>
+    <div>https://youtube.com/playlist?list=PLucm8g_ezqNrQmqtO0qmew8sKXEEcaHvc</div>
+    <div></div>
+    <div>/////</div>
+    <div></div>
+    <div>CURSO DE JAVA SCRIPT:</div>
+    <div></div>
+    <div>Curso completo de Javascript (46 aulas)</div>
+    <div>https://goo.gl/zfjfkQ</div>
+    <div></div>
+    <div>Cursos de Java Script</div>
+    <div></div>
+    <div>Curso de introdução ao Java script</div>
+    <div>https://youtu.be/i6Oi-YtXnAU</div>
+    <div></div>
+    <div>Curso Java script básico</div>
+    <div>https://youtube.com/playlist?list=PLntvgXM11X6pi7mW0O4ZmfUI1xDSIbmTm</div>
+    <div></div>
+    <div>Curso Java Script</div>
+    <div>https://youtube.com/playlist?list=PLx4x_zx8csUj3IbPQ4_X5jis_SkCol3eC</div>
+    <div></div>
+    <div>Att Java Script</div>
+    <div>https://www.rodrigobrito.dev.br/blog/js-0701-javascript-completo-es6-classes</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=8GPPJpiLqHk</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=dtKciwk_si4</div>
+    <div></div>
+    <div>Cursos de JavaScript em inglês:</div>
+    <div>https://www.youtube.com/playlist?list=PLRAV69dS1uWSxUIk5o3vQY2-_VKsOpXLD</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=PkZNo7MFNFg</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=jS4aFq5-91M</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=EfAl9bwzVZk</div>
+    <div></div>
+    <div>Faça 15 Projetos em JavaScript (Inglês):</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=3PHXvlpOkf4</div>
+    <div></div>
+    <div>Playlist de projetos de JS:</div>
+    <div>https://www.youtube.com/playlist?list=PLajjpPyc2dmbt0KebBvT9VQV8y2R_IO7j</div>
+    <div></div>
+    <div>/////</div>
+    <div></div>
+    <div>CURSO DE HTML & CSS:</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n&ab_channel=CursoemV%C3%ADdeo</div>
+    <div></div>
+    <div>https://app.rocketseat.com.br/node/o-guia-estelar-de-html</div>
+    <div></div>
+    <div>https://github.com/gustavoguanabara/html-css</div>
+    <div></div>
+    <div>Parte1</div>
+    <div>https://youtube.com/playlist?list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n</div>
+    <div></div>
+    <div>Parte2</div>
+    <div>https://youtube.com/playlist?list=PLHz_AreHm4dlUpEXkY1AyVLQGcpSgVF8s</div>
+    <div></div>
+    <div>HTML 5</div>
+    <div>Curso HTML 5</div>
+    <div></div>
+    <div>https://youtube.com/playlist?list=PLx4x_zx8csUiVHRDO_7qhOaeNrrQ5uU8c</div>
+    <div></div>
+    <div>Curso HTML 5</div>
+    <div>https://youtube.com/playlist?list=PLHz_AreHm4dlAnJ_jJtV29RFxnPHDuk9o</div>
+    <div></div>
+    <div>CSS3</div>
+    <div></div>
+    <div>Curso de CSS3</div>
+    <div>https://youtube.com/playlist?list=PLwXQLZ3FdTVGf7GUtiOFLc_9AXO25iIzG</div>
+    <div></div>
+    <div>Curso de CSS3</div>
+    <div>https://youtube.com/playlist?list=PLx4x_zx8csUi47Bnugpk78nqJN6rYvEnV</div>
+    <div></div>
+    <div>Curso Completo de HTML5 (42 aulas)</div>
+    <div>https://goo.gl/SD4p4g</div>
+    <div></div>
+    <div>Curso Aprenda HTML em 1 hora (22 aulas)</div>
+    <div>https://goo.gl/1kfBCZ</div>
+    <div></div>
+    <div>Curso completo de CSS3 (22 aulas)</div>
+    <div>https://goo.gl/ebjzVG</div>
+    <div></div>
+    <div>Curso Básico de CSS (12 aulas)</div>
+    <div></div>
+    <div>Curso de CSS3 com Sass e Compass (9 aulas)</div>
+    <div>https://goo.gl/bAO0hE</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLwXQLZ3FdTVF_HYP5r1oR7vK1_7ZuTU78</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=FRhM6sMOTfg&list=PLwXQLZ3FdTVGf7GUtiOFLc_9AXO25iIzG&ab_channel=NodeStudioTreinamentos</div>
+    <div></div>
+    <div>Inglês:</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=Rz-rey4Q1bw&t=10659s</div>
+    <div></div>
+    <div>Playlist de prática de HTML & CSS:</div>
+    <div>https://www.youtube.com/playlist?list=PLgCTlR71eB4-ZGpajuh01zexg8f9Qd98z</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLai7Iw-TAFJr5IQ83rIo_iSUiWaiXen5G</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=ZFQkb26UD1Y</div>
+    <div></div>
+    <div>/////</div>
+    <div></div>
+    <div>CURSO DE PYTHON:</div>
+    <div></div>
+    <div>Curso Python</div>
+    <div>https://youtube.com/playlist?list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0</div>
+    <div></div>
+    <div>Curso Python</div>
+    <div></div>
+    <div>https://youtube.com/playlist?list=PLfCKf0-awunOu2WyLe2pSD2fXUo795xRe</div>
+    <div></div>
+    <div>PYTHON 3 COMPLETO</div>
+    <div>https://drive.google.com/drive/u/0/folders/1BUvlgtXlmtem80HkPIStXjC5c9Taqm5t</div>
+    <div>https://www.youtube.com/watch?v=S9uPNppGsGo&list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6&ab_channel=CursoemV%C3%ADdeo</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=nIHq1MtJaKs&list=PLHz_AreHm4dm6wYOIW20Nyg12TAjmMGT-&ab_channel=CursoemV%C3%ADdeo</div>
+    <div></div>
+    <div>https://solyd.com.br/treinamentos/python-basico/?fbclid=IwAR0WJYyqSTr2E28c2dvqL6HnIfb2DiA1aAB40khxKwFc6L197DfZTK7iQ7k</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=XKHEtdqhLK8</div>
+    <div></div>
+    <div>Playlist e videos de python:</div>
+    <div>https://www.youtube.com/watch?v=_uQrJ0TkZlc</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=rfscVS0vtbw</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=8DvywoWv6fI</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLsyeobzWxl7poL9JTVyndKe62ieoN-MZ3</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=t8pPdKYpowI</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLwgFb6VsUj_lQTpQKDtLXKXElQychT_2j</div>
+    <div></div>
+    <div>/////</div>
+    <div></div>
+    <div>CURSO DE PHP:</div>
+    <div></div>
+    <div>Curso de PHP</div>
+    <div>https://youtube.com/playlist?list=PLwXQLZ3FdTVEITn849NlfI9BGY-hk1wkq</div>
+    <div></div>
+    <div>Curso de PHP</div>
+    <div>https://youtube.com/playlist?list=PLHz_AreHm4dm4beCCCmW4xwpmLf6EHY9k</div>
+    <div></div>
+    <div>Curso Básico de PHP (20 aulas)</div>
+    <div>https://goo.gl/wLra9o</div>
+    <div></div>
+    <div>Curso Completo de PHP (108 aulas)</div>
+    <div>https://goo.gl/1th6ok</div>
+    <div></div>
+    <div>/////</div>
+    <div></div>
+    <div>CURSO DE C#:</div>
+    <div></div>
+    <div>Curso de c#</div>
+    <div></div>
+    <div>https://youtube.com/playlist?list=PLx4x_zx8csUglgKTmgfVFEhWWBQCasNGi</div>
+    <div></div>
+    <div>////</div>
+    <div></div>
+    <div>CURSO DE C:</div>
+    <div></div>
+    <div>Curso de c</div>
+    <div></div>
+    <div>https://youtube.com/playlist?list=PLesCEcYj003SwVdufCQM5FIbrOd0GG1M4</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PL_c9BZzLwBRKKqOc9TJz1pP0ASrxLMtp2</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLBlnK6fEyqRggZZgYpPMUxdY1CYkZtARR</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLD28639E2FFC4B86A</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PL78280D6BE6F05D34</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLa75BYTPDNKZWYypgOFEsX3H2Mg-SzuLW</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLesCEcYj003SwVdufCQM5FIbrOd0GG1M4</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLGgRtySq3SDMLV8ee7p-rA9y032AU3zT8</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PL8iN9FQ7_jt4DJbeQqv--jpTy-2gTA3Cp</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLucm8g_ezqNqzH7SM0XNjsp25AP0MN82R</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLIfZMtpPYFP5qaS2RFQxcNVkmJLGQwyKE</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLxMw67OGLa0kW_TeweK2-9gXRlMLYzC1o</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLZ8dBTV2_5HTGGtrPxDB7zx8J5VMuXdob</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PL9PzDKD_B1nNpJxJ9kKFEWtN7Uzk6RpFa</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PL21rh82DRnmobAWFir6DxPuTOa82myc8_</div>
+    <div></div>
+    <div>/////</div>
+    <div></div>
+    <div>CURSO C++</div>
+    <div></div>
+    <div>Curso de c++</div>
+    <div></div>
+    <div>https://youtube.com/playlist?list=PLx4x_zx8csUjczg1qPHavU1vw1IkBcm40</div>
+    <div></div>
+    <div>Outro curso de C++:</div>
+    <div>https://youtube.com/playlist?list=PLR8Jf69jN0ulqMI8n85Cr2NsoerSF9DF5</div>
+    <div></div>
+    <div>https://www.inf.ufpr.br/ci208/NotasAula.pdf</div>
+    <div>guia de c++</div>
+    <div></div>
+    <div>////</div>
+    <div></div>
+    <div>CURSO DE KOTLIN:</div>
+    <div></div>
+    <div>Curso de Kotlin:</div>
+    <div>https://youtube.com/playlist?list=PLPs3nlHFeKTr-aDDvUxU971rPSVTyQ6Bn</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLmcyA-BbqsvJnOZoGNHPMF1dCBq0m6Qzg</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLM8_o_MDe-LEpabjij2vyHZnxI7Knrxkj</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLAzlSdU-KYwVlDl-939Vv0_r5XhU7zgX1</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLM8_o_MDe-LEas_XSKIyaFAp_MS__5j4p</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLCTD_CpMeEKSjzbsW_zmVNz23GyOVsdbS</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PL8ie04dqq7_M8nfPA9DPiAy7NsoZQpVAf</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLHZwU4kNI8DXL2ennM5kR8kHm5zwS6hOz</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLM8_o_MDe-LElQqV-SZtlyGt8l7iz770r</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLufC_h3b0C2BbBfAB3rZXXkhtRDEuQFcq</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLDqAb8tE7SQYE7NJqwuku7e1S46MOav6X</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLkws8CjXqzRkpooBmF4CdSkDIrcTlSFQS</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLRxQg_wrhrC5K3-7eNuP_1KdN2AqIe3Ie</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLxcGiBXcK0kblgnLEEC0ZphoG-PRB4x1d</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLM8_o_MDe-LEu4XrXKjA48dt1d07FPYP1</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLATOxdAcWIvPbiiK0_mn_LTQyS1FBYdaW</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=r_6Ku38sA-c&t=11746s</div>
+    <div></div>
+    <div>https://cursos.alura.com.br/course/fundamentos-android-kotlin</div>
+    <div></div>
+    <div>https://play.kotlinlang.org/koans/Classes/Data%20classes/Task.kt</div>
+    <div></div>
+    <div>/////</div>
+    <div></div>
+    <div>CURSO DE SWIFT:</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLJ0AcghBBWShgIH122uw7H9T9-NIaFpP-</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLMdYygf53DP46rneFgJ7Ab6fJPcMvr8gC</div>
+    <div></div>
+    <div>https://www.youtube.com/playlist?list=PLxNM4ef1BpxjjMKpcYSqXI4eY4tZG2csm</div>
+    <div></div>
+    <div>/////</div>
+    <div></div>
+    <div>CURSO DE GO (GOLANG):</div>
+    <div></div>
+    <div>Curso de GO:</div>
+    <div>https://youtube.com/playlist?list=PLCKpcjBB_VlBsxJ9IseNxFllf-UFEXOdg</div>
+    <div></div>
+    <div>/////</div>
+    <div></div>
+    <div>CURSO DE RUBY:</div>
+    <div></div>
+    <div>Curso de Ruby (15 aulas)</div>
+    <div>https://goo.gl/LcHcn4</div>
+    <div>Curso de Ruby On Rails (49 aulas)</div>
+    <div>https://goo.gl/4oXEAP</div>
+    <div></div>
+    <div>Introdução ao Ruby</div>
+    <div>https://youtube.com/playlist?list=PLdDT8if5attEOcQGPHLNIfnSFiJHhGDOZ</div>
+    <div></div>
+    <div>Curso de Ruby</div>
+    <div>https://youtube.com/playlist?list=PLFeyfVYazTkJN6uM5opCfSN_xjxrMybXV</div>
+    <div></div>
+    <div>Curso de Ruby On-Rails</div>
+    <div>https://youtube.com/playlist?list=PLe3LRfCs4go-mkvHRMSXEOG-HDbzesyaP</div>
+    <div></div>
+    <div>Curso de Ruby On-Rails</div>
+    <div>https://youtube.com/playlist?list=PLEdPHGYbHhldWUFs2Q-jSzXAv3NXh4wu0</div>
+    <div></div>
+    <div>////</div>
+    <div></div>
+    <div>CURSO DE REACT:</div>
+    <div></div>
+    <div>Curso de react js:</div>
+    <div>https://youtube.com/playlist?list=PLXik_5Br-zO9YVs9bxi7zoQlKq59VPTX1</div>
+    <div></div>
+    <div>https://www.alura.com.br/imersao-react/aula01-react-alurakut</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=sZ0bZGfg_m4</div>
+    <div></div>
+    <div>https://www.youtube.com/watch?v=JZQ8m08cbF0</div>
+    <div></div>
+    <div>////</div>
+    <div></div>
+    <div>CURSO DE ANGULAR:</div>
+    <div></div>
+    <div>Curso de Angular (17 aulas)</div>
+    <div>https://goo.gl/6rT9ZC</div>
+    <div></div>
+    <div>Curso de Angular 2 (56 aulas)</div>
+    <div>https://goo.gl/mxPqRt</div>
+    <div></div>
+    <div>Playlist:</div>
+    <div></div>
+    <div>https://youtube.com/playlist?list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G</div>
+    <div></div>
+    <div>////</div>
+    <div></div>
+    <div>CURSO DE VUE:</div>
+    <div></div>
+    <div>https://revue-draggable.vercel.app/ uma library que me ajuda muito</div>
+    <div>https://github.com/kyvg/vue3-notification</div>
+    <div></div>
+    <div>////</div>
+    <div></div>
+    <div>CURSO DE JQUERY:</div>
+    <div></div>
+    <div>Curso Completo de jQuery (56 aulas)</div>
+    <div>https://goo.gl/tHdIZ7</div>
+    <div></div>
+    <div>////</div>
+    <div></div>
+    <div>CURSO DE LESS:</div>
+    <div></div>
+    <div>Curso de Less (6 aulas)</div>
+    <div>https://goo.gl/Y5UkLQ</div>
+    <div></div>
+    <div>////</div>
+    <div></div>
+    <div>CURSO DE SASS:</div>
+    <div></div>
+    <div>Curso de Sass (18 aulas) "PS O CURSO ESTÁ EM INGLÊS"</div>
+    <div>https://goo.gl/DzRv1e</div>
+    <div></div>
+    <div>////</div>
+    <div></div>
+    <div>CURSO DE BOOTSTRAP:</div>
+    <div></div>
+    <div>Curso de Bootstrap (16 aulas)</div>
+    <div>https://goo.gl/xFDOxT</div>
+    <div></div>
+
+    <div class="grupo">
+        <h2>GIT E GITHUB:</h2>
+        <div>https://github.com/DanielHe4rt/git4noobs</div>
+        <div>https://github.com/theandersonn/comandos-git</div>
+        <div></div>
+        <div>ls (Listar as pastas)</div>
+        <div>cd .. (voltar um diretório)</div>
+        <div>CD:</div>
+        <div>dir / tree /f (ver o que tem dentro da pasta)</div>
+        <div>mkdir (nome da pasta) - criar novoso diretorios/pastas</div>
+        <div>git status (Verifica o status do repositório)</div>
+        <div>git add -A (Trackear o que não foi trackeado, inserir tudo)</div>
+        <div>git commit -m (Para commitar) / git commit -am</div>
+        <div>https://pt.stackoverflow.com/questions/344986/diferen%C3%A7a-do-git-commit-am-e-m</div>
+        <div>git log (lista de commit)</div>
+        <div>git reset (--soft / --mixed / --hard)</div>
+        <div>git checkout (Trocar entre branchs)</div>
+        <div>git diff (Checar o que houve nas alterações) / git diff --name-only / git diff //nome do arquivo// (vê apenas a</div>
+        <div>alteração feita naquele arquivo)</div>
+        <div>git checkout HEAD -- "diff" //nome do arquivo// (retroceder até a posição)</div>
+        <div>git push origin</div>
+        <div>git pull origin</div>
+        <div>git clone</div>
+
+        <div></div>
+        <h4>Configurações iniciais do Git</h4>
+        <div>Baixando e instalando o Git <a target="_blank" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></div>
+        <div>Configura nome de usuário:
+            <spam class="comando">git config --global user.email rwp10@hotmail.com</spam>
+        </div>
+        <div>Configura email de usuário:
+            <spam class="comando">git config --global user.email email@email.com.br</spam>
+        </div>
+        <div>Configura email de usuário global:
+            <spam class="comando">git config --global --replace-all user.email "rwp10@hotmail.com"</spam>
+        </div>
+
+        <div>Inicializando um repositório</div>
+        <div></div>
+        <div>Inicializa o versionamento no respectivo diretório</div>
+        <div>git init</div>
+        <div></div>
+        <div>Comandos básicos para sobreviver</div>
+        <div></div>
+        <div>Verifica o status do repositório</div>
+        <div>git status</div>
+        <div></div>
+        <div>Adiciona todos os arquivos para serem commitados</div>
+        <div>git add . / git add -A</div>
+        <div></div>
+        <div>Commitando arquivos</div>
+        <div>git commit -m "inserir um comentário significativo"</div>
+        <div></div>
+        <div>Visualizando relatório de commits</div>
+        <div>git log // todos os commits</div>
+        <div>git log --oneline // exibe log com hash e título do commit</div>
+        <div></div>
+        <div>Adicionando um repositório remoto</div>
+        <div>git remote add origin https://github.com/User/Repository.git</div>
+        <div></div>
+        <div>Enviando as modificações para o repositório remoto</div>
+        <div>git push origin
+            <branch>
+        </div>
+        <div></div>
+        <div> Puxando alterações do repositório remoto</div>
+        <div> git pull origin
+            <branch>
+        </div>
+        <div></div>
+        <div> Trabalhando com branchs</div>
+        <div> git checkout -b nome-branch</div>
+        <div></div>
+        <div> Aplicando merge em branchs</div>
+        <div> git merge nome-branch // precisa estar na branch de destino</div>
+        <div></div>
+        <div> Visualizando todas as branches existentes no repositório</div>
+        <div> git branch</div>
+        <div></div>
+        <div> Deletando uma branch local</div>
+        <div> git branch -D nome-branch</div>
+        <div></div>
+        <div> Deletando uma branch remoto</div>
+        <div> git push origin :nome-branch</div>
+        <div> </div>
+    </div>
+
+
+</body>
+
+</html>
